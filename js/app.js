@@ -77,33 +77,33 @@ $('.awards__slider').slick({
 	initialSlide: 3,
 });
 
-// $('.next-arrow').on('click', function () {
+$('.next-arrow').on('click', function () {
 
-// 	if ($(window).width() > 900) {
+	if ($(window).width() > 900) {
 
-// 		if ($('.awards__slider_slide.dt-end').parents('.slick-slide').hasClass('slick-current')) {
+		if ($('.awards__slider_slide.dt-end').parents('.slick-slide').hasClass('slick-current')) {
 	
-// 			$('.next-arrow').hide();
-// 		}
+			$('.next-arrow').hide();
+		}
 	
-// 		if ($('.awards__slider_slide.dt-start').parents('.slick-slide').not('.slick-current')) {
+		if ($('.awards__slider_slide.dt-start').parents('.slick-slide').not('.slick-current')) {
 	
-// 			$('.prev-arrow').show();
-// 		}
+			$('.prev-arrow').show();
+		}
 
-// 	} else {
+	} else {
 
-// 		if ($('.awards__slider_slide.mobile-end').parents('.slick-slide').hasClass('slick-current')) {
+		if ($('.awards__slider_slide.mobile-end').parents('.slick-slide').hasClass('slick-current')) {
 	
-// 			$('.next-arrow').hide();
-// 		}
+			$('.next-arrow').hide();
+		}
 	
-// 		if ($('.awards__slider_slide.mobile-start').parents('.slick-slide').not('.slick-current')) {
+		if ($('.awards__slider_slide.mobile-start').parents('.slick-slide').not('.slick-current')) {
 	
-// 			$('.prev-arrow').show();
-// 		}
-// 	}
-// })
+			$('.prev-arrow').show();
+		}
+	}
+})
 
 $('.prev-arrow').on('click', function () {
 
@@ -198,41 +198,6 @@ $('.prev-button').on('click', function () {
 		}
 	}
 })
-
-function sliderArrows(clickArrow, dtEnd, arrowOne, dtStart, arrowTwo, mobileEnd, mobileStart) {
-
-	$(clickArrow).on('click', function () {
-
-		if ($(window).width() > 900) {
-	
-			if ($(dtEnd).parents('.slick-slide').hasClass('slick-current')) {
-		
-				$(arrowOne).hide();
-			}
-		
-			if ($(dtStart).parents('.slick-slide').not('.slick-current')) {
-		
-				$(arrowTwo).show();
-			}
-	
-		} else {
-	
-			if ($(mobileEnd).parents('.slick-slide').hasClass('slick-current')) {
-		
-				$(arrowOne).hide();
-			}
-		
-			if ($(mobileStart).parents('.slick-slide').not('.slick-current')) {
-		
-				$(arrowTwo).show();
-			}
-		}
-	})	
-}
-
-sliderArrows('.next-arrow', '.awards__slider_slide.dt-end', '.next-arrow', '.awards__slider_slide.dt-start', '.prev-arrow', '.awards__slider_slide.mobile-end', '.awards__slider_slide.mobile-start');
-
-// sliderArrows('.prev-arrow', '.awards__slider_slide.dt-end', '.awards__slider_slide.dt-start', '.prev-arrow', '.awards__slider_slide.mobile-end', '.awards__slider_slide.mobile-end')
 
 });
 //<================================================ ФІЛЬТР ТОВАРУ ===============================================>\\
