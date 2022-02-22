@@ -43,9 +43,9 @@ $(document).scroll(function() {
 	var scrollTop = $(window).scrollTop();
 
 	if (scrollTop > scrollDistance) {
-		$('.header-scroll').slideDown(200);
+		$('.header-scroll').not('.error .header-scroll').slideDown(200);
 	} else {
-		$('.header-scroll').slideUp(200);
+		$('.header-scroll').not('.error .header-scroll').slideUp(200);
 	}
 });
 
