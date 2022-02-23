@@ -30,9 +30,16 @@ $('.header__menu-buttons_close').on('click', function () {
 	$('.header__menu-buttons_open').addClass('active');
 })
 
-$('.menu__nav_click span').on('click', function () {
+$('.menu__nav_click-mobile span').on('click', function () {
 
-	$(this).next('.sub-item').toggleClass('active')
+	$(this).toggleClass('active');
+	$(this).next('.sub-item-mobile').toggleClass('active')
+})
+
+$('.sub-item-mobile a').on('click', function () {
+
+	$(this).parent('.sub-item-mobile').removeClass('active');
+	$(this).parents('.menu__nav_click-mobile').find('span').removeClass('active');
 })
 
 //<================================================ СКРОЛЛ ХЕДЕРА ===============================================>\\
