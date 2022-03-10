@@ -224,29 +224,29 @@ $('.filter__basket_close').on('click', function () {
 })
 //<======================================== ПЕРЕМИКАННЯ СТОРІНОК ТОВАРІВ ========================================>\\
 
-$('.page').on('click', function () {
+$('.item-page').on('click', function () {
 
-	$(this).siblings('.page').removeClass('active');
+	$(this).siblings('.item-page').removeClass('active');
 	$(this).addClass('active');
 	$('html').animate({scrollTop: $('body').offset().top }, 500);
 })
 
 $('.next-btn').on('click', function () {
 
-	if ($('.page.three').hasClass('active')) {
+	if ($('.item-page.three').hasClass('active')) {
 		
 	} else {
-		$('.page.active').removeClass('active').next('.page').addClass('active');
+		$('.item-page.active').removeClass('active').next('.item-page').addClass('active');
 		$('html').animate({scrollTop: $('body').offset().top }, 500);
 	}
 })
 
 $('.prew-btn').on('click', function () {
 
-	if ($('.page.one').hasClass('active')) {
+	if ($('.item-page.one').hasClass('active')) {
 		
 	} else {
-		$('.page.active').removeClass('active').prev('.page').addClass('active');
+		$('.item-page.active').removeClass('active').prev('.item-page').addClass('active');
 		$('html').animate({scrollTop: $('body').offset().top }, 500);
 	}
 })
@@ -255,11 +255,11 @@ function pageToggle() {
 
 	$('.content__pages_list').on('click', function () {
 
-		if($('.page.one').hasClass('active')) {
+		if($('.item-page.one').hasClass('active')) {
 			$('.content__page.one').siblings('.content__page').removeClass('active')
 			$('.content__page.one').addClass('active');
 	
-		} else if ($('.page.two').hasClass('active')) {
+		} else if ($('.item-page.two').hasClass('active')) {
 			$('.content__page.two').siblings('.content__page').removeClass('active')
 			$('.content__page.two').addClass('active');
 	
