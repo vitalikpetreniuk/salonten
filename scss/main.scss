@@ -114,86 +114,13 @@ body.lock {
 .heading__bg {
 	display: block;
 	position: absolute;
-	transform: rotate(90deg);
 	font-size: 150px;
 	font-family: 'All round gothic';
 	color: #ffffff;
 	text-transform: uppercase;
-
-	&.beauty {
-		right: -355px;
-		top: 170px;
-	}
-
-	&.wigs {
-		right: -260px;
-		top: 75px;
-	}
-
-	&.contact {
-		right: -530px;
-		top: 350px;
-	}
-
-	&.cut {
-		right: -520px;
-		top: 380px;
-	}
-
-	&.mens {
-		right: -425px;
-		top: 285px;
-	}
-
-	&.hair {
-		right: -245px;
-		top: 60px;
-	}
-
-	&.extensions {
-		right: -660px;
-		top: 515px;
-	}
-
-	&.about-us {
-		right: -390px;
-		top: 250px;
-	}
-
-	&.meet {
-		right: -660px;
-		top: 475px;
-	}
-
-	&.product {
-		right: -460px;
-		top: 280px;
-	}
-
-	&.eco-friendly {
-		right: -1025px;
-		top: 840px;
-	}
-
-	&.review {
-		right: -390px;
-		top: 205px;
-	}
-
-	&.vouchers {
-		right: -650px;
-		top: 465px;
-	}
-
-	&.price-list {
-		right: -450px;
-		top: 260px;
-	}
-
-	&.great-lengths {
-		right: -700px;
-		top: 515px;
-	}
+	writing-mode: vertical-rl;
+	top: 20px;
+	right: -200px;
 }
 
 ._heading {
