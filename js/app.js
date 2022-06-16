@@ -224,50 +224,68 @@ $('.filter__basket_close').on('click', function () {
 })
 //<======================================== ПЕРЕМИКАННЯ СТОРІНОК ТОВАРІВ ========================================>\\
 
-$('.item-page').on('click', function () {
-
-	$(this).siblings('.item-page').removeClass('active');
-	$(this).addClass('active');
-	$('html').animate({scrollTop: $('body').offset().top }, 500);
-})
-
 $('.next-btn').on('click', function () {
 
-	if ($('.item-page.three').hasClass('active')) {
-		
-	} else {
-		$('.item-page.active').removeClass('active').next('.item-page').addClass('active');
-		$('html').animate({scrollTop: $('body').offset().top }, 500);
+	$('.content__page.active').removeClass('active').next('.content__page').addClass('active');
+	$('.item-page.active').removeClass('active').next('.item-page').addClass('active');
+	$('html').animate({scrollTop: $('body').offset().top }, 500);
+
+	if ($('.item-page.last').hasClass('active')) {
+		$('.next-btn').addClass('lock');
+	}
+
+	if ($('.prew-btn').hasClass('lock')) {
+		$('.prew-btn').removeClass('lock');
 	}
 })
 
 $('.prew-btn').on('click', function () {
 
-	if ($('.item-page.one').hasClass('active')) {
-		
-	} else {
-		$('.item-page.active').removeClass('active').prev('.item-page').addClass('active');
-		$('html').animate({scrollTop: $('body').offset().top }, 500);
+	$('.content__page.active').removeClass('active').prev('.content__page').addClass('active');
+	$('.item-page.active').removeClass('active').prev('.item-page').addClass('active');
+	$('html').animate({scrollTop: $('body').offset().top }, 500);
+
+	if ($('.item-page.first').hasClass('active')) {
+		$('.prew-btn').addClass('lock');
+	}
+
+	if ($('.next-btn').hasClass('lock')) {
+		$('.next-btn').removeClass('lock');
 	}
 })
 
-function pageToggle() {
+for(let i = 1; i <= $('.content__page').length; i++) {
 
-	$('.content__pages_list').on('click', function () {
+	$('.item-page.page_'+i).on('click', function () {
+	
+		$('.item-page').removeClass('active');
+		$(this).addClass('active');
 
-		if($('.item-page.one').hasClass('active')) {
-			$('.content__page.one').siblings('.content__page').removeClass('active')
-			$('.content__page.one').addClass('active');
-	
-		} else if ($('.item-page.two').hasClass('active')) {
-			$('.content__page.two').siblings('.content__page').removeClass('active')
-			$('.content__page.two').addClass('active');
-	
-		} else {
-			$('.content__page.three').siblings('.content__page').removeClass('active')
-			$('.content__page.three').addClass('active');
-		}
+		$('.content__page').removeClass('active');
+		$('.content__page.page_'+i).addClass('active');
+		$('html').animate({scrollTop: $('body').offset().top }, 500);
 	})
 }
 
-pageToggle();
+$('.item-page').on('click', function () {
+
+	if ($(this).hasClass('last')) {
+
+		$('.next-btn').addClass('lock');
+		$('.prew-btn').removeClass('lock');
+
+	} else {
+
+		$('.next-btn').removeClass('lock');
+	}
+
+	if ($(this).hasClass('first')) {
+
+		$('.prew-btn').addClass('lock');
+		$('.next-btn').removeClass('lock');
+
+	} else {
+
+		$('.prew-btn').removeClass('lock');
+	}
+})

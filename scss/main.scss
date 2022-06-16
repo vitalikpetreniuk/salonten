@@ -5170,3 +5170,15 @@ h3 {
 	}
 }
 
+
+
+
+.content__page.active {
+	display: flex;
+}
+
+.prew-btn.lock,
+.next-btn.lock {
+	opacity: 0.7;
+	pointer-events: none;
+}
